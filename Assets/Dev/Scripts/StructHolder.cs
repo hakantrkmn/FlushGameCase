@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public struct Gem
+public struct GemInfo
 {
     public string name;
     public int price;

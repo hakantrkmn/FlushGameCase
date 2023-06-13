@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9108755866616929312}
+  - component: {fileID: -108969465180759528}
   m_Layer: 0
   m_Name: Gem_Green
   m_TagString: Untagged
@@ -32,6 +33,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-108969465180759528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681660761696426485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbe35bcd388645e2abae754880eafe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info:
+    name: 
+    price: 0
+    icon: {fileID: 0}
+    spawnPrefab: {fileID: 0}
+  modelCollider: {fileID: 8090639986751074352}
 --- !u!1001 &2788894157899141676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52,7 +71,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 52e8e42acbb9b4cf58e8011562fc3f79,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52e8e42acbb9b4cf58e8011562fc3f79,
         type: 3}
@@ -107,3 +126,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2788894157899141676}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3059436889605975933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 52e8e42acbb9b4cf58e8011562fc3f79,
+    type: 3}
+  m_PrefabInstance: {fileID: 2788894157899141676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8090639986751074352
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3059436889605975933}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.497228, y: 1.5119847, z: 1.497228}
+  m_Center: {x: 0, y: -0.21877271, z: 0}

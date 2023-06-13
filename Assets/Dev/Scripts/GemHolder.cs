@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GemHolder : ScriptableObject
 {
-    public List<Gem> allGems;
+    public List<GemInfo> allGems;
 }

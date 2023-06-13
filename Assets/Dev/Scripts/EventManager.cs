@@ -8,5 +8,6 @@ public static class EventManager
 {
     public static Func<FloatingJoystick> GetJoystick;
     public static Func<GemHolder> GetGemHolder;
+    public static Action<Gem> StackGem;
 
 }
