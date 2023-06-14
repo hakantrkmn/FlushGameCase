@@ -42,7 +42,7 @@ public class GridCellController : MonoBehaviour
         if (currentGem==gem)
         {
             StopGrow();
-            GrowGem();
+            EventManager.SetCellGem(this);
         }
       
     }

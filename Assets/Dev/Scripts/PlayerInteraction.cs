@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    private float _timer;
+    
     private void OnTriggerStay(Collider other)
     {
         if (other.GetComponentInParent<GridCellController>())
@@ -18,6 +20,15 @@ public class PlayerInteraction : MonoBehaviour
             else
             {
                 Debug.Log("Can't Collect");
+            }
+        }
+        else if (other.GetComponentInParent<SellAreaController>())
+        {
+            _timer += Time.deltaTime;
+            if (_timer>.1f)
+            {
+                EventManager.SellGem();
+                _timer = 0;
             }
         }
     }

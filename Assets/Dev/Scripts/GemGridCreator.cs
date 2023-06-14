@@ -12,6 +12,16 @@ public class GemGridCreator : MonoBehaviour
     public GridCellController cellPrefab;
     public List<GridCellController> cells;
 
+    private void OnEnable()
+    {
+        EventManager.SetCellGem += SetCellGem;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.SetCellGem -= SetCellGem;
+    }
+
     [Button]
     public void CreateGrid()
     {
@@ -28,10 +38,17 @@ public class GemGridCreator : MonoBehaviour
                 var yStart = ((gridSize.y * gridBound) - (gridBound)) / 2;
                 cell.transform.localPosition = new Vector3((-xStart+(gridBound*j)), 0, -yStart+(gridBound*i));
                 cells.Add(cell);
-                cell.cellGem = gemHolder.allGems[Random.Range(0,gemHolder.allGems.Count)];
-                cell.GrowGem();
+                SetCellGem(cell);
             }
         }
+    }
+
+    public void SetCellGem(GridCellController cell)
+    {
+        var gemHolder = EventManager.GetGemHolder();
+        cell.cellGem = gemHolder.allGems[Random.Range(0,gemHolder.allGems.Count)];
+        cell.GrowGem();
+
     }
 
     void ClearCreatedCells()
