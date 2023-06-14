@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class SoldItemPanelController : MonoBehaviour
 {
@@ -15,6 +16,14 @@ public class SoldItemPanelController : MonoBehaviour
     private void Start()
     {
         _soldItemList = new List<SoldItemUI>();
+        SetCellSize();
+    }
+
+    void SetCellSize()
+    {
+        var cellsize = new Vector2(GetComponent<RectTransform>().rect.width,
+            GetComponent<RectTransform>().rect.height / 3);
+        content.GetComponent<GridLayoutGroup>().cellSize = cellsize;
     }
 
     private void OnEnable()

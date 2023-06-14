@@ -21,10 +21,10 @@ public class PlayerMovement : MonoBehaviour
         {
             _direction = new Vector3(_joystick.Horizontal, 0, _joystick.Vertical);
             transform.position += ( Time.deltaTime*speed*_direction );
-            transform.forward = _direction;
+            transform.forward = Vector3.Lerp(transform.forward, _direction, 20 * Time.deltaTime);
         }
       
-        animator.SetFloat("Speed",_joystick.Direction.magnitude);
+        animator.SetFloat("Speed",Mathf.Lerp(animator.GetFloat("Speed"),_joystick.Direction.magnitude,10*Time.deltaTime));
         
         
     }

@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     private int _moneyAmount;
     public CanvasGroup soldItemPanel;
     public CanvasGroup playerUI;
-
+    
     private void OnEnable()
     {
         EventManager.SoldItemPanelButtonClicked += SoldItemPanelButtonClicked;

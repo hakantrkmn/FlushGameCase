@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,6 +10,9 @@ public class FloatingJoystick : Joystick
     {
         base.Start();
         background.gameObject.SetActive(false);
+        background.sizeDelta = new Vector2(Screen.width / 4, Screen.width / 4);
+        handle.sizeDelta = new Vector2(Screen.width / 8, Screen.width / 8);
+
     }
 
     public override void OnPointerDown(PointerEventData eventData)

@@ -27,7 +27,7 @@ public class ScriptableManager : MonoBehaviour
             if (gemInfo.spawnPrefab==soldGem.info.spawnPrefab)
             {
                 gemInfo.soldAmount++;
-                SaveManager.SaveGameData(gameData);
+                SaveManager.SaveGameData(gemHolder);
                 return;
             }
         }

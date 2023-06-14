@@ -115,7 +115,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 312.48288}
+  m_SizeDelta: {x: 1080, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6271532120034624804
 CanvasRenderer:
@@ -143,6 +143,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     spawnPrefab: {fileID: 0}
     soldAmount: 0
+    growTime: 0
   gemTypeText: {fileID: 6271532120088610149}
   collectedAmountText: {fileID: 6271532120881869721}
   icon: {fileID: 6271532119676341856}

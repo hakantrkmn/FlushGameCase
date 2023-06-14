@@ -13,4 +13,14 @@ public class GemHolder : ScriptableObject
     {
         SaveManager.SaveGameData(this);
     }
+
+    [Button]
+    public void ResetSoldAmount()
+    {
+        foreach (var gem in allGems)
+        {
+            gem.soldAmount = 0;
+        }
+        Save();
+    }
 }
