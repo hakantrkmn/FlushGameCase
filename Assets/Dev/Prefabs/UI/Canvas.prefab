@@ -322,12 +322,12 @@ PrefabInstance:
     - target: {fileID: 4616677801253801845, guid: 69fdb1810e39c41e5b96e344ed4acf28,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5427083
+      value: 0.54322916
       objectReference: {fileID: 0}
     - target: {fileID: 4616677801253801845, guid: 69fdb1810e39c41e5b96e344ed4acf28,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.8545928
+      value: 0.81700003
       objectReference: {fileID: 0}
     - target: {fileID: 4616677801253801845, guid: 69fdb1810e39c41e5b96e344ed4acf28,
         type: 3}
@@ -337,23 +337,50 @@ PrefabInstance:
     - target: {fileID: 4616677801253801845, guid: 69fdb1810e39c41e5b96e344ed4acf28,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 3.009903
+      value: 2.2552986
       objectReference: {fileID: 0}
     - target: {fileID: 4616677801253801845, guid: 69fdb1810e39c41e5b96e344ed4acf28,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1.954895
+      value: 0.9548998
       objectReference: {fileID: 0}
     - target: {fileID: 4616677801253801845, guid: 69fdb1810e39c41e5b96e344ed4acf28,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616677801765910140, guid: 69fdb1810e39c41e5b96e344ed4acf28,
+        type: 3}
+      propertyPath: m_text
+      value: All Gems
       objectReference: {fileID: 0}
     - target: {fileID: 4616677801765910140, guid: 69fdb1810e39c41e5b96e344ed4acf28,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 55.45
       objectReference: {fileID: 0}
+    - target: {fileID: 4616677801765910140, guid: 69fdb1810e39c41e5b96e344ed4acf28,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 14.4151
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616677801765910140, guid: 69fdb1810e39c41e5b96e344ed4acf28,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 10.893677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616677801765910140, guid: 69fdb1810e39c41e5b96e344ed4acf28,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fd95201db7a984f3aac8739d3dac07d4,
+        type: 2}
+    - target: {fileID: 4616677801765910140, guid: 69fdb1810e39c41e5b96e344ed4acf28,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5991946660470180675, guid: fd95201db7a984f3aac8739d3dac07d4,
+        type: 2}
     - target: {fileID: 4616677803024666456, guid: 69fdb1810e39c41e5b96e344ed4acf28,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -374,16 +401,33 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: -3.983902
       objectReference: {fileID: 0}
+    - target: {fileID: 4616677803024666456, guid: 69fdb1810e39c41e5b96e344ed4acf28,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -54.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4616677803024666471, guid: 69fdb1810e39c41e5b96e344ed4acf28,
         type: 3}
       propertyPath: m_fontSize
-      value: 158.05
+      value: 113.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4616677803024666471, guid: 69fdb1810e39c41e5b96e344ed4acf28,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fd95201db7a984f3aac8739d3dac07d4,
+        type: 2}
     - target: {fileID: 4616677803024666471, guid: 69fdb1810e39c41e5b96e344ed4acf28,
         type: 3}
       propertyPath: m_fontSizeMax
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 4616677803024666471, guid: 69fdb1810e39c41e5b96e344ed4acf28,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5991946660470180675, guid: fd95201db7a984f3aac8739d3dac07d4,
+        type: 2}
     - target: {fileID: 4616677803145986112, guid: 69fdb1810e39c41e5b96e344ed4acf28,
         type: 3}
       propertyPath: m_Pivot.x
