@@ -18,26 +18,26 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 04d485c7575d6449392bacd2f4cfef18, type: 3}
     spawnPrefab: {fileID: 7681660761696426485, guid: 8eb1ad96a3a6a402a9be3c2cdc82f1a6,
       type: 3}
-    soldAmount: 5
+    soldAmount: 0
     growTime: 5
   - name: Pink
     price: 1
     icon: {fileID: 21300000, guid: 919b9384988954edc9516bbae93384f9, type: 3}
     spawnPrefab: {fileID: 3427865406334321421, guid: 6524e6e25855b496b93d6f4357e1c409,
       type: 3}
-    soldAmount: 9
+    soldAmount: 0
     growTime: 5
   - name: Yellow
     price: 1
     icon: {fileID: 21300000, guid: 8efca97950d1a49769d27f3dedada15c, type: 3}
     spawnPrefab: {fileID: 5981163420174094764, guid: 60b416ec9bc73485db6ca02611e4f10d,
       type: 3}
-    soldAmount: 4
+    soldAmount: 0
     growTime: 5
   - name: Black
     price: 10
     icon: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
     spawnPrefab: {fileID: 5981163420174094764, guid: 09d7af58b8e6d4a35bb8202c91054e4d,
       type: 3}
-    soldAmount: 3
+    soldAmount: 0
     growTime: 5
