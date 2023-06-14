@@ -16,8 +16,8 @@ public class SoldItemUI : MonoBehaviour
 
     public void SetItem()
     {
-        gemTypeText.text = info.name;
-        collectedAmountText.text = info.soldAmount.ToString();
+        gemTypeText.text = "Gem Name : "+info.name;
+        collectedAmountText.text = "Collected Count : "+info.soldAmount.ToString();
         icon.sprite = info.icon;
     }
 }

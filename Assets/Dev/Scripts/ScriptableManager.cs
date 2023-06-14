@@ -14,6 +14,13 @@ public class ScriptableManager : MonoBehaviour
         EventManager.GetGameData += () => gameData;
     }
 
+    private void Start()
+    {
+        SaveManager.LoadGameData(gameData);
+        SaveManager.LoadGameData(gemHolder);
+
+    }
+
     private void GemSold(int arg1, Gem soldGem)
     {
         foreach (var gemInfo in gemHolder.allGems)
@@ -21,6 +28,7 @@ public class ScriptableManager : MonoBehaviour
             if (gemInfo.spawnPrefab==soldGem.info.spawnPrefab)
             {
                 gemInfo.soldAmount++;
+                SaveManager.SaveGameData(gameData);
                 return;
             }
         }

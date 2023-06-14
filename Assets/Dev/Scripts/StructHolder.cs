@@ -10,4 +10,12 @@ public class GemInfo
     public Sprite icon;
     public GameObject spawnPrefab;
     public int soldAmount;
+    public float growTime;
+}
+
+[Serializable]
+public class SoldGem
+{
+    public string name;
+    public int soldAmount;
 }

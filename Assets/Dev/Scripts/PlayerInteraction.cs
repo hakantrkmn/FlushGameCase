@@ -17,17 +17,13 @@ public class PlayerInteraction : MonoBehaviour
                 EventManager.StackGem(cell.currentGem);
                 
             }
-            else
-            {
-                Debug.Log("Can't Collect");
-            }
         }
         else if (other.GetComponentInParent<SellAreaController>())
         {
             _timer += Time.deltaTime;
             if (_timer>.1f)
             {
-                EventManager.SellGem();
+                EventManager.SellGem(other.transform);
                 _timer = 0;
             }
         }

@@ -11,9 +11,8 @@ public static class EventManager
 
     public static Func<GemHolder> GetGemHolder;
     public static Action<Gem> StackGem;
-    public static Action SellGem;
+    public static Action<Transform> SellGem;
     public static Action<int,Gem> GemSold;
     public static Action SoldItemPanelButtonClicked;
-    public static Action<GridCellController> SetCellGem;
 
 }

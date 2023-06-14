@@ -37,7 +37,6 @@ public class SoldItemPanelController : MonoBehaviour
                     item.GetComponent<SoldItemUI>().SetItem();
                     soldItemlist.Add(item.GetComponent<SoldItemUI>());
                 }
-                
 
                
             }

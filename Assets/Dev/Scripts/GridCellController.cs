@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 public class GridCellController : MonoBehaviour
 {
     public Collider gridCollider;
@@ -33,7 +35,7 @@ public class GridCellController : MonoBehaviour
         gem.GetComponent<Gem>().info = cellGem;
         gem.transform.localScale = Vector3.zero;
         _grow = DOTween.Sequence();
-        _grow.Append(gem.transform.DOScale(1, 10));
+        _grow.Append(gem.transform.DOScale(1, cellGem.growTime));
         currentGem = gem.GetComponent<Gem>();
     }
 
@@ -42,9 +44,16 @@ public class GridCellController : MonoBehaviour
         if (currentGem==gem)
         {
             StopGrow();
-            EventManager.SetCellGem(this);
+            SetSellGem();
         }
       
+    }
+
+    public void SetSellGem()
+    {
+        var gemHolder = EventManager.GetGemHolder();
+        cellGem = gemHolder.allGems[Random.Range(0,gemHolder.allGems.Count)];
+        GrowGem();
     }
 
     [Button]

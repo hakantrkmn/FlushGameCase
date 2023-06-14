@@ -12,14 +12,9 @@ public class GemGridCreator : MonoBehaviour
     public GridCellController cellPrefab;
     public List<GridCellController> cells;
 
-    private void OnEnable()
+    private void Start()
     {
-        EventManager.SetCellGem += SetCellGem;
-    }
-
-    private void OnDisable()
-    {
-        EventManager.SetCellGem -= SetCellGem;
+        CreateGrid();
     }
 
     [Button]
@@ -27,7 +22,6 @@ public class GemGridCreator : MonoBehaviour
     {
         ClearCreatedCells();
 
-        var gemHolder = EventManager.GetGemHolder();
         for (int i = 0; i < gridSize.y; i++)
         {
             for (int j = 0; j < gridSize.x; j++)
