@@ -11,9 +11,10 @@ public class UIManager : MonoBehaviour
     private int _moneyAmount;
     public CanvasGroup soldItemPanel;
     public CanvasGroup playerUI;
+
     private void OnEnable()
     {
-        EventManager.SoldItemPanelButtonClicked+= SoldItemPanelButtonClicked;
+        EventManager.SoldItemPanelButtonClicked += SoldItemPanelButtonClicked;
         EventManager.GemSold += GemSold;
         EventManager.GetJoystick += () => joystick;
     }
@@ -26,39 +27,38 @@ public class UIManager : MonoBehaviour
 
     private void SoldItemPanelButtonClicked()
     {
-        if (soldItemPanel.alpha==0)
+        if (soldItemPanel.alpha == 0)
         {
-            soldItemPanel.blocksRaycasts = true;
-            soldItemPanel.alpha=1;
-            soldItemPanel.interactable = true;
-            playerUI.alpha = 0;
-            playerUI.interactable = false;
+            ChangeCanvasGroup(soldItemPanel, true);
+            ChangeCanvasGroup(playerUI, false);
             joystick.transform.parent.gameObject.SetActive(false);
         }
         else
         {
-            soldItemPanel.blocksRaycasts = false;
-            soldItemPanel.alpha=0;
-            soldItemPanel.interactable = false;
-            playerUI.alpha = 1;
-            playerUI.interactable = true;
+            ChangeCanvasGroup(soldItemPanel, false);
+            ChangeCanvasGroup(playerUI, true);
             joystick.transform.parent.gameObject.SetActive(true);
-
         }
     }
 
-    private void GemSold(int amount,Gem soldGem)
+    void ChangeCanvasGroup(CanvasGroup panel, bool isActive)
+    {
+        panel.blocksRaycasts = isActive;
+        panel.alpha = isActive ? 1 : 0;
+        panel.interactable = isActive;
+    }
+
+    private void GemSold(int amount, Gem soldGem)
     {
         _moneyAmount += amount;
         moneyText.text = _moneyAmount.ToString();
         EventManager.GetGameData().totalMoneyAmount = _moneyAmount;
         SaveManager.SaveGameData(EventManager.GetGameData());
-
     }
 
     private void OnDisable()
     {
-        EventManager.SoldItemPanelButtonClicked-= SoldItemPanelButtonClicked;
+        EventManager.SoldItemPanelButtonClicked -= SoldItemPanelButtonClicked;
         EventManager.GemSold -= GemSold;
         EventManager.GetJoystick -= () => joystick;
     }

@@ -4,12 +4,18 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SoldItemPanelController : MonoBehaviour
 {
     public Transform content;
     public SoldItemUI soldItemPrefab;
-    public List<SoldItemUI> soldItemlist;
+    List<SoldItemUI> _soldItemList;
+
+    private void Start()
+    {
+        _soldItemList = new List<SoldItemUI>();
+    }
 
     private void OnEnable()
     {
@@ -35,7 +41,7 @@ public class SoldItemPanelController : MonoBehaviour
                     var item = Instantiate(soldItemPrefab.gameObject, content);
                     item.GetComponent<SoldItemUI>().info = gemInfo;
                     item.GetComponent<SoldItemUI>().SetItem();
-                    soldItemlist.Add(item.GetComponent<SoldItemUI>());
+                    _soldItemList.Add(item.GetComponent<SoldItemUI>());
                 }
 
                
@@ -43,9 +49,9 @@ public class SoldItemPanelController : MonoBehaviour
         }
     }
 
-    public bool CheckIfItemAlreadySpawned(GemInfo gemInfo)
+    bool CheckIfItemAlreadySpawned(GemInfo gemInfo)
     {
-        foreach (var soldItem in soldItemlist)
+        foreach (var soldItem in _soldItemList)
         {
             if (soldItem.info.spawnPrefab == gemInfo.spawnPrefab)
             {

@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
             stack.Remove(sellGem);
             stackPoint.position -= new Vector3(0, sellGem.modelCollider.bounds.size.y, 0);
             EventManager.GemSold((int)gainedMoney, sellGem);
-            sellGem.transform.DOJump(sellPoint.position, 1, 1, .5f).OnComplete(() => { Destroy(sellGem.gameObject); });
+            sellGem.CollectableSold(sellPoint.position);
             SpawnMoneyUI((int)gainedMoney);
         }
     }
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     private void StackGem(Gem gem)
     {
         gem.transform.parent = stackStartPoint;
-        gem.transform.DOLocalJump(new Vector3(0, stackPoint.localPosition.y, 0), 2, 1, .5f);
+        gem.CollectableStacked(new Vector3(0, stackPoint.localPosition.y, 0));
         stackPoint.position += new Vector3(0, gem.modelCollider.bounds.size.y, 0);
         stack.Add(gem);
     }

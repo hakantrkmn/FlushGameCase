@@ -13,6 +13,9 @@ public class GridCellController : MonoBehaviour
     private Sequence _grow;
     public Gem currentGem;
 
+    public float Bound => gridCollider.bounds.size.x;
+
+
     private void OnEnable()
     {
         EventManager.StackGem += GemCollected;
@@ -21,11 +24,6 @@ public class GridCellController : MonoBehaviour
     private void OnDisable()
     {
         EventManager.StackGem -= GemCollected;
-    }
-
-    public float GetBound()
-    {
-        return gridCollider.bounds.size.x;
     }
 
     public void GrowGem()
@@ -38,26 +36,22 @@ public class GridCellController : MonoBehaviour
         _grow.Append(gem.transform.DOScale(1, cellGem.growTime));
         currentGem = gem.GetComponent<Gem>();
     }
-
-    public void GemCollected(Gem gem)
+    void GemCollected(Gem gem)
     {
         if (currentGem==gem)
         {
-            StopGrow();
-            SetSellGem();
+            StopGrowing();
+            SetGrowGem();
         }
       
     }
-
-    public void SetSellGem()
+    void SetGrowGem()
     {
         var gemHolder = EventManager.GetGemHolder();
         cellGem = gemHolder.allGems[Random.Range(0,gemHolder.allGems.Count)];
         GrowGem();
     }
-
-    [Button]
-    public void StopGrow()
+    void StopGrowing()
     {
         _grow.Kill();
     }

@@ -18,7 +18,6 @@ public class ScriptableManager : MonoBehaviour
     {
         SaveManager.LoadGameData(gameData);
         SaveManager.LoadGameData(gemHolder);
-
     }
 
     private void GemSold(int arg1, Gem soldGem)

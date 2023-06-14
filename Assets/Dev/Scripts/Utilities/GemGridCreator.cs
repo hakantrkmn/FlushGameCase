@@ -15,6 +15,7 @@ public class GemGridCreator : MonoBehaviour
     private void Start()
     {
         CreateGrid();
+        SetCellGem();
     }
 
     [Button]
@@ -27,21 +28,27 @@ public class GemGridCreator : MonoBehaviour
             for (int j = 0; j < gridSize.x; j++)
             {
                 var cell = Instantiate(cellPrefab.gameObject, transform).GetComponent<GridCellController>();
-                var gridBound = cell.GetBound()+padding;
+                var gridBound = cell.Bound+padding;
                 var xStart = ((gridSize.x * gridBound) - (gridBound)) / 2;
                 var yStart = ((gridSize.y * gridBound) - (gridBound)) / 2;
                 cell.transform.localPosition = new Vector3((-xStart+(gridBound*j)), 0, -yStart+(gridBound*i));
                 cells.Add(cell);
-                SetCellGem(cell);
+
+                
             }
         }
     }
 
-    public void SetCellGem(GridCellController cell)
+    void SetCellGem()
     {
         var gemHolder = EventManager.GetGemHolder();
-        cell.cellGem = gemHolder.allGems[Random.Range(0,gemHolder.allGems.Count)];
-        cell.GrowGem();
+
+        foreach (var cell in cells)
+        {
+            cell.cellGem = gemHolder.allGems[Random.Range(0,gemHolder.allGems.Count)];
+            cell.GrowGem();
+        }
+        
 
     }
 
@@ -50,13 +57,9 @@ public class GemGridCreator : MonoBehaviour
         foreach (var cell in cells)
         {
             if (Application.isEditor)
-            {
                 DestroyImmediate(cell.gameObject);
-            }
             else
-            {
                 Destroy(cell.gameObject);
-            } 
         }
         cells.Clear();
     }

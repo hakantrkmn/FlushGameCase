@@ -13,10 +13,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             var cell = other.GetComponentInParent<GridCellController>();
             if (cell.currentGem.transform.localScale.x > .25f)
-            {
                 EventManager.StackGem(cell.currentGem);
-                
-            }
         }
         else if (other.GetComponentInParent<SellAreaController>())
         {
