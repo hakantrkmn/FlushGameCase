@@ -36,7 +36,7 @@ MonoBehaviour:
     growTime: 5
   - name: Black
     price: 10
-    icon: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
+    icon: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
     spawnPrefab: {fileID: 5981163420174094764, guid: 09d7af58b8e6d4a35bb8202c91054e4d,
       type: 3}
     soldAmount: 0
